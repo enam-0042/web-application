@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>Login V4</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <link rel="stylesheet" type="text/css" href="/stylesheets/bootstrap.min.css" />
+
+    <link rel="stylesheet" type="text/css" href="/stylesheets/util.css" />
+    <link rel="stylesheet" type="text/css" href="/stylesheets/main.css" />
+</head>
+
+<body>
+    <div class="limiter">
+        <div class="container-login100">
+            <div class="wrap-login100 p-l-55 p-r-55 p-t-65 p-b-54">
+                <form class="login100-form validate-form" method="post" action="/loginbank" >
+                    <span class="login100-form-title p-b-49"> Login </span>
+                    <div class="wrap-input100 validate-input" data-validate="Email is required">
+                        <span class="label-input100">Email</span>
+                        <input class="input100" type="text" name="email" placeholder="Enter your email" />
+                        <span class="focus-input100" data-symbol=""></span>
+                    </div> 
+                    <div class="wrap-input100 validate-input" data-validate="Password is required">
+                        <span class="label-input100">Password</span>
+                        <input class="input100" type="password" name="pass" placeholder="Type your password" />
+                        <span class="focus-input100" data-symbol=""></span>
+                    </div>
+                    <div class="container-login100-form-btn mt-4">
+                        <div class="wrap-login100-form-btn">
+                            <div class="login100-form-bgbtn"></div>
+                            <button class="login100-form-btn">Login</button>
+                        </div>
+                    </div>
+                    <div class="flex-col-c p-t-25">
+                        <a href="/registerbank" class="txt2">
+                            Sign Up
+                        </a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div id="dropDownSelect1"></div>
+    <script src="/javascripts/jquery-3.2.1.min.js"></script>
+    <script src="/javascripts/bootstrap.min.js"></script>
+    <script src="/javascripts/main.js"></script>
+
+</body>
+
+</html>

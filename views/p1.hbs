@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Product Card/Page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" type="text/css" href="/stylesheets/bootstrap.min.css" />
+    <!-- https://cdnjs.com/libraries/font-awesome/5.15.1 -->
+    <link rel="stylesheet" href="/fa-5.15.1/all.min.css" />
+</head>
+
+<body>
+    {{>header}}
+    <div class="container">
+        <div class="row py-4">
+            <!-- card left -->
+            <div class="col-12 col-md-6">
+                <div class="img-display">
+                    <div class="img-showcase">
+                        <img src="/shoes_images/shoe_1.jpg" alt="shoe image" />
+                        <img src="/shoes_images/shoe_2.jpg" alt="shoe image" />
+                        <img src="/shoes_images/shoe_3.jpg" alt="shoe image" />
+                        <img src="/shoes_images/shoe_4.jpg" alt="shoe image" />
+                    </div>
+                </div>
+                <div class="img-select">
+                    <div class="img-item">
+                        <a href="#" data-id="1">
+                            <img src="/shoes_images/shoe_1.jpg" alt="shoe image" />
+                        </a>
+                    </div>
+                    <div class="img-item">
+                        <a href="#" data-id="2">
+                            <img src="/shoes_images/shoe_2.jpg" alt="shoe image" />
+                        </a>
+                    </div>
+                    <div class="img-item">
+                        <a href="#" data-id="3">
+                            <img src="/shoes_images/shoe_3.jpg" alt="shoe image" />
+                        </a>
+                    </div>
+                    <div class="img-item">
+                        <a href="#" data-id="4">
+                            <img src="/shoes_images/shoe_4.jpg" alt="shoe image" />
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <!-- card right -->
+            <div class="col-12 col-md-6">
+                <h2 class="product-title">nike shoes</h2>
+
+                <div class="product-price">
+                    <p class="last-price">Old Price: <span>BDT 257.00</span></p>
+                    <p class="new-price">New Price: <span>BDT 249.00 (5%)</span></p>
+                </div>
+
+                <div class="product-detail">
+                    <h2>about this item:</h2>
+                    <p>
+Shoe plays a vital role in Men'z and Women'z fashion, Every good costume is incomplete without a Shoe. 
+                    </p>
+                    <p>
+We brought Worlds best shoes to you. 
+                    </p>
+                    <ul>
+                        <li>Color: <span>Black</span></li>
+                        <li>Available: <span>in stock</span></li>
+                        <li>Category: <span>Shoes</span></li>
+                        <li>Shipping Area: <span>All over the </span></li>
+                        <li>Shipping Fee: <span>Free</span></li>
+                    </ul>
+                </div>
+
+                <div class="purchase-info">
+                    <input type="number" min="0" value="1" />
+                    <!-- Button trigger modal -->
+                    <button type="button" class="custom-btn custom-btn-primary" data-toggle="modal"
+                        data-target="#exampleModal">
+                        Buy <i class="fas fa-shopping-cart"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <form action="/product-1" method="post" role="form">
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <label>Total Price: <span id="total-cost">BDT 249.00</span></label>
+                            <input type="number" class="form-control" min="0" value="1" name="qty" />
+                        </div>
+                        {{!-- <div class="form-group">
+                            <label for="exampleInputPassword1">Password</label>
+                            <input type="password" class="form-control" id="exampleInputPassword1" name="pass" />
+                        </div> --}}
+                        {{!-- <div class="form-group form-check">
+                            <input type="checkbox" class="form-check-input" id="exampleCheck1" name="agree" />
+                            <label class="form-check-label" for="exampleCheck1">I Agree to Purchase</label>
+                        </div> --}}
+                    </div>
+                    <div class="form-group modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-primary">Purchase</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="/script.js"></script>
+    <script src="/javascripts/jquery-3.2.1.min.js"></script>
+    <script src="/javascripts/popper.js"></script>
+    <script src="/javascripts/bootstrap.min.js"></script>
+    <script>
+        const preview_qty = document.querySelector(
+            "div.purchase-info>input[type=number]"
+        );
+        const confirm_qty = document.querySelector(
+            "div.form-group>input[type=number]"
+        );
+        const price = document.querySelector("span#total-cost");
+        const localize = new Intl.NumberFormat("en-BD", {
+            style: "currency",
+            currency: "BDT",
+        });
+        function UpdatePrice(qty_value) {
+            const total = localize.format(Number(qty_value) * 249.0);
+            price.textContent = total;
+        }
+        preview_qty.addEventListener("change", () => {
+            if (confirm_qty.value == preview_qty.value) return;
+            const curr = preview_qty.value;
+            confirm_qty.value = curr;
+            UpdatePrice(curr);
+        });
+        confirm_qty.addEventListener("change", () => {
+            if (confirm_qty.value == preview_qty.value) return;
+            const curr = confirm_qty.value;
+            preview_qty.value = curr;
+            UpdatePrice(curr);
+        });
+    </script>
+</body>
+
+</html>

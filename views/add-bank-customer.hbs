@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>Login V4</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <link rel="icon" type="image/png" href="https://colorlib.com/etc/lf/Login_v4/images/icons/favicon.ico" />
+
+    <link rel="stylesheet" type="text/css" href="/stylesheets/bootstrap.min.css" />
+
+    <link rel="stylesheet" type="text/css" href="/stylesheets/util.css" />
+    <link rel="stylesheet" type="text/css" href="/stylesheets/main.css" />
+</head>
+
+<body>
+    <div class="limiter">
+        <div class="container-login100" style="background-image: url(&#39;images/bg-01.jpg&#39;)">
+            <div class="wrap-login100 p-l-55 p-r-55 p-t-65 p-b-54">
+                <form class="login100-form validate-form" method="post" action="/addbankcustomer"oninput='bankid.setCustomValidity( bankid.value.length != 24  ? "Bank Id must have 24 character" : "")'>
+                    <span class="login100-form-title p-b-49"> Add bank before entering Home</span>
+                    <div class="wrap-input100 validate-input m-b-23" data-validate="BankId is required">
+                        <span class="label-input100">Bankid</span>
+                        <input class="input100" type="text" name="bankid" placeholder="Type your BankId" />
+                        <span class="focus-input100" data-symbol=""></span>
+                    </div>
+                    <div class="wrap-input100 validate-input" data-validate="Bank Password is required">
+                        <span class="label-input100">Password</span>
+                        <input class="input100" type="password" name="pass" placeholder="Type your Bank password" />
+                        <span class="focus-input100" data-symbol=""></span>
+                    </div>
+                    <div class="container-login100-form-btn">
+                        <div class="wrap-login100-form-btn">
+                            <div class="login100-form-bgbtn"></div>
+                            <button class="login100-form-btn">Procedd</button>
+                        </div>
+                    </div>
+                    <div class="flex-col-c p-t-25">
+                        <a href="/logincustomer" class="txt2">
+                            Back to login @ecom.com
+                        </a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div id="dropDownSelect1"></div>
+
+    <script src="/javascripts/jquery-3.2.1.min.js"></script>
+
+    <script src="/javascripts/popper.js"></script>
+    <script src="/javascripts/bootstrap.min.js"></script>
+
+    <script src="/javascripts/main.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>Register New Account V4</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <link rel="icon" type="image/png" href="https://colorlib.com/etc/lf/Login_v4/images/icons/favicon.ico" />
+
+    <link rel="stylesheet" type="text/css" href="/stylesheets/bootstrap.min.css" />
+
+    <link rel="stylesheet" type="text/css" href="/stylesheets/util.css" />
+    <link rel="stylesheet" type="text/css" href="/stylesheets/main.css" />
+</head>
+
+<body>
+    <div class="limiter">
+        <div class="container-login100" style="background-image: url(&#39;images/bg-01.jpg&#39;)">
+            <div class="wrap-login100 p-l-55 p-r-55 p-t-65 p-b-54">
+                <form class="login100-form validate-form" method="post" action="/registerbank" oninput='pass2.setCustomValidity(pass2.value != pass.value ? "Passwords do not match." : "")'>
+                    <span class="login100-form-title p-b-49"> Register Here </span>
+                    <div class="wrap-input100 validate-input m-b-23" data-validate="Username is required">
+                        <span class="label-input100">Username</span>
+                        <input class="input100" type="text" name="username" placeholder="Type your username" />
+                        <span class="focus-input100" data-symbol=""></span>
+                    </div>
+                    <div class="wrap-input100 validate-input" data-validate="Email is required">
+                        <span class="label-input100">Email</span>
+                        <input class="input100" type="text" name="email" placeholder="Enter a email" />
+                        <span class="focus-input100" data-symbol=""></span>
+                    </div>                    
+                    <div class="wrap-input100 validate-input" data-validate="Password is required">
+                        <span class="label-input100">Password</span>
+                        <input class="input100" type="password" name="pass" placeholder="Type your password" />
+                        <span class="focus-input100" data-symbol=""></span>
+                    </div>                    
+                    <div class="wrap-input100 validate-input" data-validate="Password is required">
+                        <span class="label-input100">Confirm password</span>
+                        <input class="input100" type="password" name="pass2" placeholder="Type password again" />
+                        <span class="focus-input100" data-symbol=""></span>
+                    </div>
+                    <div class="wrap-input100 validate-input" data-validate="Give a initial balance">
+                        <span class="label-input100">Initial Balance</span>
+                        <input class="input100" type="number" name="balance" placeholder="Balance" />
+                        <span class="focus-input100" data-symbol=""></span>
+                    </div>  
+                    <div class="container-login100-form-btn">
+                        <div class="wrap-login100-form-btn">
+                            <div class="login100-form-bgbtn"></div>
+                            <button class="login100-form-btn">Register</button>
+                        </div>
+                    </div>
+                    <div class="flex-col-c p-t-30">
+                        <a href="/loginbank" class="txt2">
+                            Log In
+                        </a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div id="dropDownSelect1"></div>
+
+    <script src="/javascripts/jquery-3.2.1.min.js"></script>
+
+    <script src="/javascripts/popper.js"></script>
+    <script src="/javascripts/bootstrap.min.js"></script>
+
+    <script src="/javascripts/main.js"></script>
+
+</body>
+
+</html>

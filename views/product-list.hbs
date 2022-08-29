@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Details</title>
+    <link rel="stylesheet" type="text/css" href="/stylesheets/bootstrap.min.css">
+</head>
+<body>
+    {{>header}}
+    <div class="container">
+        <div class="row py-3">
+            <div class="col-12 col-sm-6 col-md-4">
+                <div class="card">
+                    <img src="/shoes_images/shoe_1.jpg" class="card-img-top" alt="seed">
+                    <div class="card-body">
+                        <h5 class="card-title">Shoes</h5>
+                        <p class="card-text">Original NIKE shoes, imported from trusted vendor.</p>
+                        <a href="/product-1" class="btn btn-primary">See Details</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-sm-6 col-md-4">
+                <div class="card">
+                    <img src="/pant_image/pant1.jpg" class="card-img-top" alt="seed">
+                    <div class="card-body">
+                        <h5 class="card-title">Pants</h5>
+                        <p class="card-text">Handmade cotton pant,cotton from kashmir</p>
+                        <a href="/product-2" class="btn btn-primary">See Details</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-sm-6 col-md-4">
+                <div class="card">
+                    <img src="/sunglass_image/s4.jpg" class="card-img-top" alt="seed">
+                    <div class="card-body">
+                        <h5 class="card-title">Sun-glass</h5>
+                        <p class="card-text">Italian Sunglass, protect from UV radiation.</p>
+                        <a href="/product-3" class="btn btn-primary">See Details</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+          <nav aria-label="Page navigation example">
+            <ul class="pagination justify-content-center">
+              <li class="page-item disabled">
+                <a class="page-link">&laquo;</a>
+              </li>
+              <li class="page-item"><a class="page-link" href="#">1</a></li>
+              <li class="page-item disabled">
+                <a class="page-link" href="#">&raquo;</a>
+              </li>
+            </ul>
+          </nav>
+    </div>
+
+    
+    
+</body>
+</html>
