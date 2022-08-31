@@ -23,7 +23,7 @@
             font-size: 5em;
         }
 
-        div.col-sm-6 {
+        div.col-sm-8 {
             background-color: #000000aa;
             border-radius: 5px;
         }
@@ -34,18 +34,26 @@
             gap: 1em;
             grid-template-columns: auto auto auto;
         }
+
+        div.center {
+            display: grid;
+            justify-content: center;
+        }
     </style>
 </head>
 
 <body>
     <div class="container">
-        <div class="row">
-            <div class="col-12 col-sm-6 p-5 m-5">
-                <h1 class="text-center text-warning">Welcome to Our Services</h1>
+        <div class="row justify-content-center">
+            <div class="col-12 col-sm-8 p-5 m-5">
+                <h1 class="text-center text-warning">Delivery Confirmation Panel</h1>
                 <div class="grid mt-5">
-                    <a class="btn btn-success" href="/loginbank">Bank</a>
-                    <a class="btn btn-success" href="/logincustomer">Store</a>
-                    <a class="btn btn-success" href="/seller">Seller</a>
+                    <a class="btn btn-success" href="/seller-api-1">Seller 1</a>
+                    <a class="btn btn-success" href="/seller-api-2">Seller 2</a>
+                    <a class="btn btn-success" href="/seller-api-3">Seller 3</a>
+                </div>
+                <div class="center mt-3">
+                    <a class="btn btn-success" href="/">Return to Home</a>
                 </div>
             </div>
         </div>
