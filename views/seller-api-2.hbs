@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product Details</title>
+  <link rel="stylesheet" type="text/css" href="/stylesheets/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+
+        <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">ID</th>
+                            <th scope="col">Product No</th>
+                            <th scope="col">Quantity</th>
+                            <th scope="col">Cost</th>
+                            <th scope="col">Status</th>
+
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {{#each pro1}}
+                        <tr>
+                            <td>{{this._id}}</td>
+                            <td>{{this.productno}}</td>
+                            <td>{{this.quantity}}</td>
+                            <td>{{this.cost}}</td>
+                            <td>{{this.delivered}}</td>
+                            <td></td>
+                        </tr>
+                        {{/each}}
+                    </tbody>
+                </table>
+                <form action="/seller-api-2" method="post">
+                    <div class="form-group">
+                      <label for="insert_trxnID">Enter Transaction ID</label>
+                      <input type="text" class="form-control" id="insert_trxnID" aria-describedby="emailHelp" name="transactionid">
+                      <small id="emailHelp" class="form-text text-muted">Insert Transaction ID to confirm delivery status</small>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                  </form>
+    </div>
+</body>
+</html>
